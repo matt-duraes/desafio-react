@@ -1,3 +1,29 @@
-.tarefas_criadas{
-    color: blue;
+.container_lista {
+    margin: auto;
+    width: 730px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: var(--gray-500);
+}
+.container_lista header {
+    display: flex;
+    justify-content: space-between;
+}
+.container_lista header .tarefas {
+    display: flex;
+}
+header .tarefas p, .nenhuma_tarefa {
+    margin: 5px;
+}
+.nenhuma_tarefa {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+.nenhuma_tarefa p:first-of-type{
+    margin-top: 20px;
 }
