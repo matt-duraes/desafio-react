@@ -27,7 +27,7 @@
     color: bold;
     border-radius: 8px;
     border: none;
-    background-color: var(--blue-dark);
+    background-color: var(--dark-blue);
     margin-left: 5px;
     display: flex;
     justify-content: center;

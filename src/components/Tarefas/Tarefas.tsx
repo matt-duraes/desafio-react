@@ -1,3 +1,4 @@
+import { Tarefa } from '../Tarefa/Tarefa';
 import styles from './Tarefas.module.css'
 import {Book} from '@phosphor-icons/react';
 
@@ -7,11 +8,11 @@ export const Tarefas = () => {
             <header>
                 <div className={styles.tarefas}>
                     <p>Tarefas Criadas</p>
-                    <p>0</p>
+                    <p className={styles.numero}>0</p>
                 </div>
                 <div className={styles.tarefas}>
                     <p>Tarefas Concluídas</p>
-                    <p>2</p>
+                    <p className={styles.numero}>2</p>
                 </div>
             </header>
             <div>
@@ -21,6 +22,7 @@ export const Tarefas = () => {
                     <p>Crie tarefas e organize seus itens a fazer</p>
                 </div>
             </div>
+            <Tarefa textoTarefa='Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.' />
         </div>
     )
 }

@@ -1,9 +1,6 @@
 .container_lista {
     margin: auto;
-    width: 730px;
-    border-radius: 8px;
-    padding: 10px;
-    background-color: var(--gray-500);
+    width: 736px;
 }
 .container_lista header {
     display: flex;
@@ -12,8 +9,16 @@
 .container_lista header .tarefas {
     display: flex;
 }
-header .tarefas p, .nenhuma_tarefa {
-    margin: 5px;
+header .tarefas p:first-of-type {
+    color: var(--blue) ;
+    font-weight: bold;
+}
+header .tarefas p {
+    margin-right: 10px;
+}
+header .tarefas .numero {
+    color: white;
+    font-weight: bold;
 }
 .nenhuma_tarefa {
     margin-top: 20px;
@@ -23,6 +28,7 @@ header .tarefas p, .nenhuma_tarefa {
     align-items: center;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
+    display: none;
 }
 .nenhuma_tarefa p:first-of-type{
     margin-top: 20px;

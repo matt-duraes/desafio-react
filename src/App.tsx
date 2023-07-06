@@ -10,6 +10,7 @@ function App() {
       <Header src="src/assets/logo.svg"/>
       <Pesquisa/>
       <Tarefas/>
+  
     </>
   )
 }
