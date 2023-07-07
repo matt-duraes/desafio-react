@@ -5,7 +5,6 @@
     border-radius: 8px;
     padding: 20px;
     display: flex;
-    
 }
 .texto_tarefa {
     display: flex;
@@ -19,10 +18,20 @@
     font-weight: 100;
     color: var(--gray-100);
 }
-.concluida {
+.texto_tarefa_concluida {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    font-size: 14;
+    font-weight: 100;
+    color: var(--gray-100);
     text-decoration: line-through;
 }
-.tarefa_nao_concluida {
+.tarefa {
     height: 24px;
     width: 24px;
     border-radius: 50%;
@@ -32,28 +41,37 @@
     border: 3px solid var(--dark-blue);
     cursor: pointer;
 }
-
-.tarefa_nao_concluida svg {
+.tarefa svg {
     display: none;
 }
-
 .tarefa_concluida {
+    background-color: var(--dark-blue);
     height: 24px;
     width: 24px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark-blue);
+    border: 1px solid white;
     cursor: pointer;
 }
-
 .tarefa_concluida svg {
-    font-weight: bold;
-    display: block;
+    color: white;
 }
+
 .icone_lixeira {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
+    width: 35px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icone_lixeira:hover {
+    background-color: var(--gray-400);
+}
+.icone_lixeira svg {
+    color: white;
 }

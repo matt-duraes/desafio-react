@@ -1,16 +1,12 @@
 import './App.css'
-import { Header } from './components/Header/Header'
-import { Pesquisa } from './components/Pesquisa/Pesquisa'
-import { Tarefas } from './components/Tarefas/Tarefas'
+import { Index } from './components/Index';
+
 
 function App() {
 
   return (
     <>
-      <Header src="src/assets/logo.svg"/>
-      <Pesquisa/>
-      <Tarefas/>
-  
+      <Index/>
     </>
   )
 }

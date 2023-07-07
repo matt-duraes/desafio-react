@@ -1,3 +1,41 @@
+.container_busca{
+    width: 736px;
+    height: 54px;
+    display: flex;
+    margin: auto;
+    border: none;
+    position: relative;
+    top: -25px;
+}
+.input_buscar{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--gray-500);
+    width: 638px;
+    padding-left: 20px;
+    color: var(--gray-100);
+    vertical-align: middle;
+
+}
+
+.button_criar{
+    color: white;
+    width: 92px;
+    height: 52px;
+    color: bold;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--dark-blue);
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
 .container_lista {
     margin: auto;
     width: 736px;
