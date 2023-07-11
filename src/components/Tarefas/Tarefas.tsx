@@ -3,6 +3,8 @@ import styles from './Tarefas.module.css';
 import { Tarefa } from '../Tarefa/Tarefa';
 import {Book, PlusCircle} from '@phosphor-icons/react';
 import { useState, useRef} from 'react';
+
+
 export const Tarefas = () => {
 
     const [tarefas, setTarefas] = useState ([
@@ -10,6 +12,9 @@ export const Tarefas = () => {
         'Estudar Lição',
         'Terminar Demanda',
     ]);
+    const [tarefaCriada, setTarefaCriada] = useState(tarefas.length);
+    const [tarefaConcluida, setTarefaConcluida] = useState(0);
+
     const inputRef = useRef<HTMLInputElement>(null);
 
     const criarTarefa = () => {
@@ -18,8 +23,11 @@ export const Tarefas = () => {
             setTarefas([...tarefas,inputValue]);
             inputRef.current.value = '';
         }
+        
+        let tarefasCriadas = tarefas.length + 1;
+        setTarefaCriada(tarefasCriadas);
     }
-    
+
     return (
         <>
             <div className={styles.container_busca}>
@@ -33,11 +41,11 @@ export const Tarefas = () => {
                 <header>
                     <div className={styles.tarefas}>
                         <p>Tarefas Criadas</p>
-                        <p className={styles.numero}>3</p>
+                        <p className={styles.numero}>{tarefaCriada}</p>
                     </div>
                     <div className={styles.tarefas}>
                         <p>Tarefas Concluídas</p>
-                        <p className={styles.numero}>0</p>
+                        <p className={styles.numero}>{tarefaConcluida}</p>
                     </div>
                 </header>
                 <div>

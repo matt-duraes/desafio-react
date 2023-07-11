@@ -6,6 +6,15 @@
     padding: 20px;
     display: flex;
 }
+
+.container_tarefa_conluida {
+    background-color: var(--gray-700);
+    margin-top: 30px;
+    height: 72px;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+}
 .texto_tarefa {
     display: flex;
     align-items: center;
