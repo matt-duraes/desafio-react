@@ -33,8 +33,11 @@
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
+    cursor: pointer;
 }
-
+.button_criar:hover{
+    background-color: var(--dark-blue-hover);
+}
 
 .container_lista {
     margin: auto;
@@ -59,14 +62,13 @@ header .tarefas .numero {
     font-weight: bold;
 }
 .nenhuma_tarefa {
-    margin-top: 20px;
-    display: flex;
+    margin-top: 100px;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    display: none;
 }
 .nenhuma_tarefa p:first-of-type{
     margin-top: 20px;
