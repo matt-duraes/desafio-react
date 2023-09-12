@@ -6,9 +6,12 @@ interface TarefaProps {
     id: string,
     atividade: string;
     estado: boolean;
+    removerTarefa: any;
 }
 
-export const Tarefa = ({ atividade, estado}: TarefaProps) => {
+
+
+export const Tarefa = ({ atividade, estado, removerTarefa, id}: TarefaProps) => {
 
     const [tarefaConcluida, setTarefaConcluida] = useState(
         estado
@@ -17,8 +20,11 @@ export const Tarefa = ({ atividade, estado}: TarefaProps) => {
         setTarefaConcluida(!tarefaConcluida);
     }
     
+    const deletarTarefa = (id: any) => {
+        removerTarefa(id)
+    }
     return (
-        <div className={tarefaConcluida ? styles.container_tarefa_conluida : styles.container_tarefa}>
+        <div className={tarefaConcluida ? styles.container_tarefa_conluida : styles.container_tarefa} id={id}>
             <div onClick={alterarEstado} className={tarefaConcluida ? styles.tarefa_concluida : styles.tarefa}>
                 <Check size={15} />
                 {estado}
@@ -26,7 +32,7 @@ export const Tarefa = ({ atividade, estado}: TarefaProps) => {
             <p className={tarefaConcluida ? styles.texto_tarefa_concluida : styles.texto_tarefa}>
                 {atividade}
             </p>
-            <button className={styles.icone_lixeira} >
+            <button className={styles.icone_lixeira} onClick={()=>deletarTarefa(id)}>
                 <Trash size={25} />
             </button>
         </div>

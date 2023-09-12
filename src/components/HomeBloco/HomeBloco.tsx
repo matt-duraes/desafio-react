@@ -42,7 +42,15 @@ export const HomeBloco = () => {
 
         return contador;
     }
+
     const [concluidas, setConcluidas] = useState(verificarConcluidas());
+
+    const deletarTarefa = (id: any) => {
+        const listaSemDeletado = tarefas.filter(tarefa => {
+            return tarefa.id != id;
+        })
+        setTarefas(listaSemDeletado);
+    }
 
     return (
         <>
@@ -82,6 +90,7 @@ export const HomeBloco = () => {
                             id={tarefa.id}
                             atividade={tarefa.atividade}
                             estado={tarefa.estado} 
+                            removerTarefa={deletarTarefa}
                         />
                     );
                 })}
