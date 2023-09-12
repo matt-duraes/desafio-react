@@ -7,16 +7,18 @@ interface TarefaProps {
     atividade: string;
     estado: boolean;
     removerTarefa: any;
+    concluirTarefa: any;
 }
 
 
 
-export const Tarefa = ({ atividade, estado, removerTarefa, id}: TarefaProps) => {
+export const Tarefa = ({ atividade, estado, removerTarefa, id, concluirTarefa}: TarefaProps) => {
 
     const [tarefaConcluida, setTarefaConcluida] = useState(
         estado
     )
     const alterarEstado = () => {
+        concluirTarefa(!tarefaConcluida)
         setTarefaConcluida(!tarefaConcluida);
     }
     
@@ -25,7 +27,7 @@ export const Tarefa = ({ atividade, estado, removerTarefa, id}: TarefaProps) => 
     }
     return (
         <div className={tarefaConcluida ? styles.container_tarefa_conluida : styles.container_tarefa} id={id}>
-            <div onClick={alterarEstado} className={tarefaConcluida ? styles.tarefa_concluida : styles.tarefa}>
+            <div onClick={() =>alterarEstado()} className={tarefaConcluida ? styles.tarefa_concluida : styles.tarefa}>
                 <Check size={15} />
                 {estado}
             </div>

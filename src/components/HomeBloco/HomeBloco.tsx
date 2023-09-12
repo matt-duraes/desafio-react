@@ -28,22 +28,7 @@ export const HomeBloco = () => {
 
         setTarefas([...tarefas, novaTarefa]);
         setValorCampo('');
-        setConcluidas(verificarConcluidas());
     }
-    const verificarConcluidas = () => {
-        let contador = 0;
-
-        // Percorre todas as tarefas e conta as concluídas
-        tarefas.forEach(tarefa => {
-            if (tarefa.estado === true) {
-                contador += 1;
-            }
-        });
-
-        return contador;
-    }
-
-    const [concluidas, setConcluidas] = useState(verificarConcluidas());
 
     const deletarTarefa = (id: any) => {
         const listaSemDeletado = tarefas.filter(tarefa => {
@@ -51,6 +36,26 @@ export const HomeBloco = () => {
         })
         setTarefas(listaSemDeletado);
     }
+
+    const somaConcluidas = ( ) => {
+        let contador = 0;
+        tarefas.map((tarefa) => {
+            if(tarefa.estado == true) {
+                contador += 1;
+            }
+        })
+        return contador;
+    }
+    const [tarefasConcluidas, setTarefasConcluidas] = useState(somaConcluidas)
+
+    const marcarConcluida = (tarefaConcluida: any) => {
+        if(tarefaConcluida == true) {
+            setTarefasConcluidas(tarefasConcluidas + 1)
+            return; 
+        }
+        setTarefasConcluidas(tarefasConcluidas - 1)
+        
+    };
 
     return (
         <>
@@ -74,7 +79,7 @@ export const HomeBloco = () => {
                     </div>
                     <div className={styles.tarefas}>
                         <p>Tarefas Concluídas</p>
-                        <p className={styles.numero}>{concluidas}</p>
+                        <p className={styles.numero}>{tarefasConcluidas}</p>
                     </div>
                 </header>
                 <div className={styles.nenhuma_tarefa}>
@@ -91,6 +96,7 @@ export const HomeBloco = () => {
                             atividade={tarefa.atividade}
                             estado={tarefa.estado} 
                             removerTarefa={deletarTarefa}
+                            concluirTarefa={marcarConcluida}
                         />
                     );
                 })}
