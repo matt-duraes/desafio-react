@@ -15,6 +15,7 @@ Abaixo estão os principais conceitos que serão utilizados durante o desenvolvi
 - Listas e chaves no ReactJS
 - Propriedades
 - Componentização
+- Css Modules
 
 
 -> EM DESENVOLVIMENTO ...
